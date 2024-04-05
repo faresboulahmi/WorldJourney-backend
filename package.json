@@ -5,9 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon api/index.js",
     "start": "node api/index.js",
-    "build": "npm install ",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faresboulahmi/WorldJourney-backend.git"
   },
   "keywords": [],
   "author": "",
