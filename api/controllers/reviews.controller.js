@@ -16,7 +16,7 @@ export const deletedReviews = async (req, res, next) => {
     return next(errorHandler(404, "Reviews not found!"));
   }
   try {
-    await Reviews.findOneAndDelete(req.params.id);
+       await Reviews.findByIdAndDelete(req.params.id);
     res.status(200).json("Reviews has been deleted!");
   } catch (error) {
     next(error);
