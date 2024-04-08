@@ -21,13 +21,7 @@ mongoose
   });
 
 const __dirname = path.resolve();
-const corsOptions = {
-  origin: "http://localhost:5173/",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true, // Enable CORS credentials (cookies, authorization headers, etc.)
-};
 
-app.use(cors(corsOptions));
 
 
 const app = express();
@@ -35,6 +29,10 @@ const app = express();
 app.use(express.json());
 
 app.use(cookieParser());
+
+app.use(cors({
+  origin: 'https://fares.com'
+}));
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000!");
