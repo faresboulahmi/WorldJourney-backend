@@ -8,6 +8,7 @@ import reviewsRouter from "./routes/reviews.route.js";
 import adminRouter from "./routes/admin.route.js";
 import cookieParser from "cookie-parser";
 import path from "path";
+import cors from "cors";
 dotenv.config();
 
 mongoose
@@ -20,6 +21,14 @@ mongoose
   });
 
 const __dirname = path.resolve();
+const corsOptions = {
+  origin: "http://localhost:5173/",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // Enable CORS credentials (cookies, authorization headers, etc.)
+};
+
+app.use(cors(corsOptions));
+
 
 const app = express();
 
