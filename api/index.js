@@ -29,6 +29,12 @@ const app = express();
 app.use(express.json());
 
 app.use(cookieParser());
+const cookieOptions = {
+  sameSite: 'None', 
+  secure: true, 
+  httpOnly: true 
+};
+res.cookie('access_token', token, cookieOptions);
 
 app.use(cors({
   origin: 'http://localhost:5173'
