@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: 'https://fares.com'
+  origin: 'https://localhost:5173'
 }));
 
 app.listen(3000, () => {
