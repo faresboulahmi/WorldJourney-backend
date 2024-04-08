@@ -3,7 +3,8 @@ import { errorHandler } from './error.js';
 
 export const verifyToken = (req, res, next) => {
   const token = req.cookies.access_token;
-
+  console.log(req.cookies.access_token);
+  console.log(req.cookies);
   if (!token) return next(errorHandler(401, 'Unauthorized'));
 
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
@@ -12,4 +13,16 @@ export const verifyToken = (req, res, next) => {
     req.user = user;
     next();
   });
+};
+
+export const setCookieOptions = (req, res, next) => {
+  const cookieOptions = {
+    sameSite: 'None',
+    // secure: true,
+    httpOnly: true
+  };
+  
+  res.cookie('access_token', '', cookieOptions); // Example cookie, replace with actual token if needed
+  
+  next();
 };
