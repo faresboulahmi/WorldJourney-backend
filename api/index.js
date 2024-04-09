@@ -8,7 +8,6 @@ import reviewsRouter from "./routes/reviews.route.js";
 import adminRouter from "./routes/admin.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors"; 
-import {  setCookieOptions } from "./utils/verifyUser.js"; // Import verifyToken middleware
 
 import path from "path";
 dotenv.config();
@@ -34,8 +33,7 @@ app.use(cookieParser());
 
 // Use CORS middleware to allow requests from http://localhost:5173
 app.use(cors({
-  origin: 'https://worldjouney.netlify.app',
-  credentials: true
+  origin: 'https://worldjouney.netlify.app'
 }));
 
 app.use(setCookieOptions);
