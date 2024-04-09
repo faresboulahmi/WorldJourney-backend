@@ -6,8 +6,8 @@ import { deleteUser, test, updateUser,  getUser} from '../controllers/user.contr
 const router = express.Router();
 
 router.get('/test', test);
-router.post('/update/:id' updateUser)
-router.delete('/delete/:id' deleteUser)
+router.post('/update/:id' ,updateUser)
+router.delete('/delete/:id', deleteUser)
 router.get('/get/:id', getUser)
 
 
