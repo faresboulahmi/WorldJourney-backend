@@ -34,7 +34,7 @@ app.use(cookieParser());
 
 // Use CORS middleware to allow requests from http://localhost:5173
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://worldjouney.netlify.app',
   credentials: true
 }));
 
