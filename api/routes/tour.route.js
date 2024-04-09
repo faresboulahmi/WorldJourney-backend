@@ -1,5 +1,4 @@
 import express from 'express';
-import { verifyToken } from '../utils/verifyUser.js';
 import { createTour, deleteTour, getTour, getTours,  updateTour } from '../controllers/tour.controller.js';
 
 
@@ -7,9 +6,9 @@ import { createTour, deleteTour, getTour, getTours,  updateTour } from '../contr
 const router = express.Router();
 
 
-router.post('/create' , verifyToken , createTour);
-router.delete('/delete/:id' , verifyToken , deleteTour);
-router.post('/update/:id' , verifyToken  , updateTour);
+router.post('/create' , createTour);
+router.delete('/delete/:id', deleteTour);
+router.post('/update/:id'   , updateTour);
 router.get('/get/:id', getTour);
 router.get('/get' , getTours);
 
