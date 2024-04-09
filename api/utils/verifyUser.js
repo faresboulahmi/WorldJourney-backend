@@ -16,7 +16,7 @@ export const verifyToken = (req, res, next) => {
 export const setCookieOptions = (req, res, next) => {
   const cookieOptions = {
     sameSite: 'None',
-    secure: true,
+    // secure: true,
     httpOnly: true
   };
   
