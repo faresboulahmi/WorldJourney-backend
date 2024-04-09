@@ -46,7 +46,7 @@ app.listen(3000, () => {
 
 
 app.use("/api/user", verifyToken ,  userRouter); 
-app.use("/api/auth", authRouter);
+app.use("/api/auth",verifyToken , authRouter);
 app.use("/api/tour", tourRouter);
 app.use("/api/reviews", reviewsRouter);
 app.use('/api/admin' , adminRouter)
