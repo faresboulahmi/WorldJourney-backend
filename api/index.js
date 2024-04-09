@@ -8,7 +8,7 @@ import reviewsRouter from "./routes/reviews.route.js";
 import adminRouter from "./routes/admin.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors"; 
-import { verifyToken, setCookieOptions } from "./utils/verifyUser.js"; // Import verifyToken middleware
+import {  setCookieOptions } from "./utils/verifyUser.js"; // Import verifyToken middleware
 
 import path from "path";
 dotenv.config();
@@ -45,8 +45,8 @@ app.listen(3000, () => {
 });
 
 
-app.use("/api/user", verifyToken ,  userRouter); 
-app.use("/api/auth",verifyToken , authRouter);
+app.use("/api/user" ,  userRouter); 
+app.use("/api/auth" , authRouter);
 app.use("/api/tour", tourRouter);
 app.use("/api/reviews", reviewsRouter);
 app.use('/api/admin' , adminRouter)
