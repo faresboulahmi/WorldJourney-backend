@@ -36,7 +36,7 @@ app.use(cors({
   origin: 'https://worldjouney.netlify.app'
 }));
 
-app.use(setCookieOptions);
+
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000!");
