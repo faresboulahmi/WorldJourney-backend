@@ -31,11 +31,9 @@ export const updateTour = async (req, res, next) => {
     return next(errorHandler(404, "Tour not found "));
   }
   try {
-    const updateTour = await Tour.findByIdAndUpdate(
-      req.params.id, 
-      req.body,
-      { new: true }
-    );
+    const updateTour = await Tour.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     res.status(200).json(updateTour);
   } catch (error) {
     next(error);
@@ -69,7 +67,7 @@ export const getTours = async (req, res, next) => {
 
     if (maxPeople === undefined || maxPeople === "false") {
       maxPeople = { $in: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] };
-    }
+    } 
 
     const searchTerm = req.query.searchTerm || "";
 
@@ -91,4 +89,3 @@ export const getTours = async (req, res, next) => {
     next(error);
   }
 };
-
