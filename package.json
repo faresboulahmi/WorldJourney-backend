@@ -7,11 +7,11 @@
   "scripts": {
     "dev": "nodemon api/index.js",
     "start": "node api/index.js"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/faresboulahmi/WorldJourney-backend.git"
-    },
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faresboulahmi/WorldJourney-backend.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-session": "^1.18.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.5.0",
     "nodemon": "^3.0.1"
