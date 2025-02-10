@@ -31,7 +31,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://worldjourney-faresboulahmi.vercel.app/",
+    origin: "https://worldjourney-faresboulahmi.vercel.app",
     credentials: true,
 
   })
